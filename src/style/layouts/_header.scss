@@ -1,0 +1,13 @@
+.header {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary;
+    border-bottom: 5px solid $color-tertiary;
+
+    &__heading {
+        color: $color-tertiary;
+    }
+}
