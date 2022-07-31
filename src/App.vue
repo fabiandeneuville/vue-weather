@@ -3,7 +3,7 @@
     
     <headerBlock></headerBlock>
     <searchBlock></searchBlock>
-
+    <weatherDisplay></weatherDisplay>
 
   </div>
 </template>
@@ -12,12 +12,14 @@
 
 import headerBlock from './components/header'
 import searchBlock from './components/search.vue'
+import weatherDisplay from './components/weather.vue'
 
 export default {
   name: 'App',
   components: {
       'headerBlock' : headerBlock,
-      'searchBlock' : searchBlock
+      'searchBlock' : searchBlock,
+      'weatherDisplay' : weatherDisplay
   }
 }
 </script>

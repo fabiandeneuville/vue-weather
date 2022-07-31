@@ -3,8 +3,9 @@
     <div class="search">
 
         <label class="search__label" for="position">Entrez le nom d'une ville</label>
-        <input class="search__input" type="text" name="position">
-        <button class="search__button pill-button">Valider</button>
+        <input class="search__input" type="text" name="position" spellcheck="false" v-on:keydown.enter="getMeteo" v-model="requestLocation">
+        <button class="search__button pill-button" v-on:click="getMeteo">Valider</button>
+        <p class="search__error">{{ errorMessage }}</p>
 
     </div>
 
@@ -13,13 +14,79 @@
 
 <script>
 
+import axios from 'axios'
+
+import store from '../store/store'
+
 export default {
     name : 'searchBlock',
     data(){
         return {
-            
+            requestLocation: '',
+            api_key: process.env.VUE_APP_KEY,
+            requestUrl: 'https://api.openweathermap.org/data/2.5/weather?',
+            errorMessage: ''
         }
     },
+    methods : {
+        formatTime(time){
+
+            if(time < 10){
+                return '0' + time
+            } else {
+                return time
+            }
+
+        },
+        convertTimeStamp(timestamp){
+
+            const date = new Date(timestamp * 1000);
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const time = `${this.formatTime(hours)}:${this.formatTime(minutes)}`;
+            return time;
+
+        },
+        getMeteo(){
+
+            if(this.requestLocation === ''){
+
+                this.displayErrorMessage()
+
+            } else {
+
+                this.removeErrorMessage()
+
+                axios
+                .get(`${this.requestUrl}q=${this.requestLocation}&units=metric&appid=${this.api_key}&lang=fr`)
+                .then(response => {
+    
+                    store.commit('setLocation', response.data.name)
+                    store.commit('setCountry', response.data.sys.country)
+                    store.commit('setDescription', response.data.weather[0].description)
+                    store.commit('setTemperature', response.data.main.temp)
+                    store.commit('setHumidity', response.data.main.humidity)
+                    store.commit('setSunrise', this.convertTimeStamp(response.data.sys.sunrise))
+                    store.commit('setSunset', this.convertTimeStamp(response.data.sys.sunset))
+
+                })
+                .catch(() => {
+                    this.errorMessage = 'Destination introuvable. Veuillez essayer avec une orhographe différente.'
+                })
+
+            }
+        },
+        displayErrorMessage(){
+
+            this.errorMessage = 'Veuillez-renseigner un nom de ville !';
+
+        },
+        removeErrorMessage(){
+
+            this.errorMessage = '';
+
+        }
+    }
 }
 
 </script>
