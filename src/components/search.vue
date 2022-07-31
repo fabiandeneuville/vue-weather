@@ -17,9 +17,9 @@ export default {
     name : 'searchBlock',
     data(){
         return {
-
+            
         }
-    }
+    },
 }
 
 </script>

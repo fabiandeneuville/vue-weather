@@ -18,7 +18,7 @@ export default {
     name: 'headerBlock',
     data(){
         return {
-            
+
         }
     }
 }
