@@ -64,14 +64,14 @@ export default {
                     store.commit('setLocation', response.data.name)
                     store.commit('setCountry', response.data.sys.country)
                     store.commit('setDescription', response.data.weather[0].description)
-                    store.commit('setTemperature', response.data.main.temp)
-                    store.commit('setHumidity', response.data.main.humidity)
+                    store.commit('setTemperature', response.data.main.temp+'°C')
+                    store.commit('setHumidity', response.data.main.humidity+'%')
                     store.commit('setSunrise', this.convertTimeStamp(response.data.sys.sunrise))
                     store.commit('setSunset', this.convertTimeStamp(response.data.sys.sunset))
 
                 })
                 .catch(() => {
-                    this.errorMessage = 'Destination introuvable. Veuillez essayer avec une orhographe différente.'
+                    this.errorMessage = 'Destination introuvable. Veuillez essayer avec une orthographe différente.'
                 })
 
             }
