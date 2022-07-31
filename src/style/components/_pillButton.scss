@@ -1,0 +1,13 @@
+.pill-button {
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid $color-tertiary;
+    color: $color-tertiary;
+    background-color: transparent;
+    transition: all 0.3s ease;
+
+    &:hover, &:focus {
+        background-color: $color-tertiary;
+        color: white;
+    }
+}

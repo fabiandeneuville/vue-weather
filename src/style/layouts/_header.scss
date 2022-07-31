@@ -25,8 +25,7 @@
         cursor: pointer;
         transition: transform 0.3s ease;
 
-        &:hover {
-            transform: scale(1.1);
+        &:hover, &:focus {
             background-color: $color-tertiary;
             color: $color-secondary;
         }

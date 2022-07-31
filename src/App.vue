@@ -2,6 +2,7 @@
   <div id="app">
     
     <headerBlock></headerBlock>
+    <searchBlock></searchBlock>
 
 
   </div>
@@ -10,11 +11,13 @@
 <script>
 
 import headerBlock from './components/header'
+import searchBlock from './components/search.vue'
 
 export default {
   name: 'App',
   components: {
-      'headerBlock': headerBlock
+      'headerBlock' : headerBlock,
+      'searchBlock' : searchBlock
   }
 }
 </script>
