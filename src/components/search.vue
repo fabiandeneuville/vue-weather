@@ -49,7 +49,7 @@ export default {
 
             if(this.requestLocation === ''){
 
-                this.displayErrorMessage()
+                this.displayErrorMessage('Veuillez-renseigner un nom de ville !')
 
             } else {
 
@@ -70,14 +70,14 @@ export default {
                     store.commit('displayWeather', true)
                 })
                 .catch(() => {
-                    this.errorMessage = 'Destination introuvable. Veuillez essayer avec une orthographe différente.'
+                    this.displayErrorMessage('Destination introuvable. Veuillez essayer avec une orthographe différente.')
                 })
 
             }
         },
-        displayErrorMessage(){
+        displayErrorMessage(message){
 
-            this.errorMessage = 'Veuillez-renseigner un nom de ville !';
+            this.errorMessage = message;
 
         },
         removeErrorMessage(){
