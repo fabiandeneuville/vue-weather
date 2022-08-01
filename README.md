@@ -3,6 +3,8 @@
 ## A basic [weather app](https://fabiandeneuville.github.io/vue-weather/) developed using Vue.JS, Vue CLI and Vuex.
 
 ![vue-weather](https://user-images.githubusercontent.com/94392055/182200703-48d72266-c960-4de0-b477-ed0f9a73d0af.png)
+![vue-weather-mobile](https://user-images.githubusercontent.com/94392055/182212943-2e0ee15f-61f2-4009-84c9-a54937a8998c.png)
+
 
 Weather datas provided by [OpenWeather](https://openweathermap.org/current).
 
