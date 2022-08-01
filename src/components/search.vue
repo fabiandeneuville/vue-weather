@@ -1,12 +1,10 @@
 <template>
     
     <div class="search">
-
         <label class="search__label" for="position">Entrez le nom d'une ville</label>
-        <input class="search__input" type="text" name="position" spellcheck="false" v-on:keydown.enter="getMeteo" v-model="requestLocation">
+        <input class="search__input" type="text" id="position" name="position" spellcheck="false" v-on:keydown.enter="getMeteo" v-model="requestLocation">
         <button class="search__button pill-button" v-on:click="getMeteo">Valider</button>
         <p class="search__error">{{ errorMessage }}</p>
-
     </div>
 
 
@@ -68,6 +66,7 @@ export default {
                     store.commit('setHumidity', response.data.main.humidity+'%')
                     store.commit('setSunrise', this.convertTimeStamp(response.data.sys.sunrise))
                     store.commit('setSunset', this.convertTimeStamp(response.data.sys.sunset))
+                    store.commit('displayWeather')
 
                 })
                 .catch(() => {
