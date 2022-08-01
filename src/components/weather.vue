@@ -11,6 +11,7 @@
         </div>
         <div class="weather__description weather__info">
             <span class="weather__info__legend">Temps :</span>
+            <img v-bind:src="iconUrl" v-bind:alt="description">
             <p class="weather__info__text">{{ description }}</p>
         </div>
         <div class="weather__temperature weather__info">
@@ -52,6 +53,9 @@ export default {
         },
         description(){
             return store.state.description
+        },
+        iconUrl(){
+            return store.state.iconUrl
         },
         temperature(){
             return store.state.temperature

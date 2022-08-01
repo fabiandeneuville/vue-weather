@@ -9,6 +9,7 @@ export default new Vuex.Store({
         'location' : undefined,
         'country' : undefined,
         'description' : undefined,
+        'iconUrl' : undefined,
         'temperature' : undefined,
         'humidity' : undefined,
         'sunrise' : undefined,
@@ -29,6 +30,9 @@ export default new Vuex.Store({
         },
         setDescription(state, description){
             state.description = description
+        },
+        setIconUrl(state, iconUrl){
+            state.iconUrl = iconUrl
         },
         setTemperature(state, temperature){
             state.temperature = temperature
