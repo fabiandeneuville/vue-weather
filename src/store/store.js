@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state : {     
+    state : {
+        'displayWeather' : false,     
         'location' : undefined,
         'country' : undefined,
         'description' : undefined,
@@ -17,6 +18,9 @@ export default new Vuex.Store({
 
     },
     mutations : {
+        displayWeather(state){
+            state.displayWeather = true
+        },
         setLocation(state, location){
             state.location = location
         },
