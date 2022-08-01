@@ -1,23 +1,34 @@
 <template>
     
-    <div class="weather">
-        <div class="weather__location">
-            <p>{{ location }}</p>
+    <div v-if="displayWeather" class="weather">
+        <div class="weather__location weather__info">
+            <span class="weather__info__legend">Ville :</span>
+            <p class="weather__info__text">{{ location }}</p>
         </div>
-        <div class="weather__country">
-            <p>{{ country }}</p>
+        <div class="weather__country weather__info">
+            <span class="weather__info__legend">Pays :</span>
+            <p class="weather__info__text">{{ country }}</p>
         </div>
-        <div class="weather__description">
-            <p>{{ description }}</p>
+        <div class="weather__description weather__info">
+            <span class="weather__info__legend">Temps :</span>
+            <p class="weather__info__text">{{ description }}</p>
         </div>
-        <div class="weather__temperature">
-            <p>{{ temperature }}</p>
+        <div class="weather__temperature weather__info">
+            <span class="weather__info__legend">Température :</span>
+            <p class="weather__info__text">{{ temperature }}</p>
         </div>
-        <div class="weather__humidity">
-            <p>{{ humidity }}</p>
+        <div class="weather__humidity weather__info">
+            <span class="weather__info__legend">Humidité :</span>
+            <p class="weather__info__text">{{ humidity }}</p>
         </div>
-        <div class="weather__sunrise">{{ sunrise }}</div>
-        <div class="weather__sunset">{{ sunset }}</div>
+        <div class="weather__sunrise weather__info">
+            <span class="weather__info__legend">Lever du soleil :</span>
+            <p class="weather__info__text">{{ sunrise }}</p>
+        </div>
+        <div class="weather__sunset weather__info">
+            <span class="weather__info__legend">Coucher du soleil :</span>
+            <p class="weather__info__text">{{ sunset }}</p>
+        </div>
     </div>
 
 </template>
@@ -30,6 +41,9 @@ export default {
     name: 'weatherDisplay',
     computed : {
 
+        displayWeather(){
+            return store.state.displayWeather
+        },
         location(){
             return store.state.location
         },
