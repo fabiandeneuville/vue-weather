@@ -59,7 +59,6 @@ export default {
                 .get(`${this.requestUrl}q=${this.requestLocation}&units=metric&appid=${this.api_key}&lang=fr`)
                 .then(response => {
     
-                    console.log(response)
                     const iconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     store.commit('setLocation', response.data.name)
                     store.commit('setCountry', response.data.sys.country)
