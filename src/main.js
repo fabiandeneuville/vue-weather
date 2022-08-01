@@ -20,6 +20,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false
 
 new Vue({
+  created(){
+    document.documentElement.setAttribute('lang', 'fr')
+  },
   render: h => h(App),
   store
 }).$mount('#app')
