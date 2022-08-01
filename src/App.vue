@@ -4,6 +4,7 @@
     <headerBlock></headerBlock>
     <searchBlock></searchBlock>
     <weatherDisplay></weatherDisplay>
+    <footerBlock></footerBlock>
 
   </div>
 </template>
@@ -13,13 +14,15 @@
 import headerBlock from './components/header'
 import searchBlock from './components/search.vue'
 import weatherDisplay from './components/weather.vue'
+import footerBlock from './components/footer.vue'
 
 export default {
   name: 'App',
   components: {
       'headerBlock' : headerBlock,
       'searchBlock' : searchBlock,
-      'weatherDisplay' : weatherDisplay
+      'weatherDisplay' : weatherDisplay,
+      'footerBlock' : footerBlock
   }
 }
 </script>
