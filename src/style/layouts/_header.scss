@@ -4,30 +4,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: $color-secondary;
+    background-color: $color-tertiary;
     border-bottom: 5px solid $color-tertiary;
 
     &__heading {
-        color: $color-tertiary;
-    }
-
-    &__info-button {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 25px;
-        height: 25px;
-        font-size: 18px;
-        border-radius: 20px;
-        border: 2px solid $color-tertiary;
-        color: $color-tertiary;
-        background: transparent;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-
-        &:hover, &:focus {
-            background-color: $color-tertiary;
-            color: $color-secondary;
-        }
+        color: $color-secondary;
     }
 }
