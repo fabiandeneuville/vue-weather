@@ -58,10 +58,10 @@ export default {
                 axios
                 .get(`${this.requestUrl}q=${this.requestLocation}&units=metric&appid=${this.api_key}&lang=fr`)
                 .then(response => {
-    
                     const iconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     store.commit('setLocation', response.data.name)
                     store.commit('setCountry', response.data.sys.country)
+                    store.commit('setLocalTime', this.convertTimeStamp(response.data.dt))
                     store.commit('setDescription', response.data.weather[0].description)
                     store.commit('setIconUrl', iconUrl)
                     store.commit('setTemperature', response.data.main.temp+'°C')
