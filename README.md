@@ -1,6 +1,24 @@
 # vue-weather
 
-## Project setup
+## A basic [weather app](https://fabiandeneuville.github.io/vue-weather/) developed using Vue.JS, Vue CLI and Vuex.
+
+![vue-weather](https://user-images.githubusercontent.com/94392055/182200703-48d72266-c960-4de0-b477-ed0f9a73d0af.png)
+
+Weather datas provided by [OpenWeather](https://openweathermap.org/current).
+
+***
+
+### Project setup
+
+1. Clone this repository
+
+2.  Add a .env file in the root folder of the project an put your api key in it :
+
+```
+VUE_APP_KEY="YOUR_API_KEY"
+```
+
+3.  Run :
 ```
 npm install
 ```
