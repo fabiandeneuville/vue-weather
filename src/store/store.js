@@ -8,7 +8,6 @@ export default new Vuex.Store({
         'displayWeather' : false,     
         'location' : undefined,
         'country' : undefined,
-        'localTime' : undefined,
         'description' : undefined,
         'iconUrl' : undefined,
         'temperature' : undefined,
@@ -28,9 +27,6 @@ export default new Vuex.Store({
         },
         setCountry(state, country){
             state.country = country
-        },
-        setLocalTime(state, time){
-            state.localTime = time
         },
         setDescription(state, description){
             state.description = description

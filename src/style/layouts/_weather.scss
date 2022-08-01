@@ -4,7 +4,7 @@
     margin: 0 auto 25px;
     display: grid;
     grid-template-columns: 5;
-    grid-template-rows: 6;
+    grid-template-rows: 5;
     border-radius: 5px;
     overflow: hidden;
     grid-gap: 5px;
@@ -26,7 +26,7 @@
 
         &__legend {
             position: absolute;
-            top:5px;
+            top:10px;
             left: 10px;
             font-size: 12px;
         }
@@ -42,10 +42,6 @@
 
     &__country {
         grid-column: 4 / 5;
-    }
-
-    &__localTime {
-        grid-column: 1 / 5;
     }
 
     &__description {

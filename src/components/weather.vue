@@ -9,10 +9,6 @@
             <span class="weather__info__legend">Pays :</span>
             <p class="weather__info__text">{{ country }}</p>
         </div>
-        <div class="weather__localTime weather__info">
-            <span class="weather__info__legend">Heure locale :</span>
-            <p class="weather__info__text">{{ localTime }}</p>
-        </div>
         <div class="weather__description weather__info">
             <span class="weather__info__legend">Temps :</span>
             <img v-bind:src="iconUrl" v-bind:alt="description">
@@ -54,9 +50,6 @@ export default {
         },
         country(){
             return store.state.country
-        },
-        localTime(){
-            return store.state.localTime
         },
         description(){
             return store.state.description
