@@ -10,6 +10,11 @@
     grid-gap: 5px;
     background-color: transparent;
     @include shadow-card;
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: displayWeather;
+
 
     &__info {
         position: relative;
@@ -57,5 +62,15 @@
 
     &__sunset {
         grid-column: 3 / 5;
+    }
+}
+
+@keyframes displayWeather {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
     }
 }

@@ -19,8 +19,8 @@ export default new Vuex.Store({
 
     },
     mutations : {
-        displayWeather(state){
-            state.displayWeather = true
+        displayWeather(state, boolean){
+            state.displayWeather = boolean
         },
         setLocation(state, location){
             state.location = location

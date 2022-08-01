@@ -68,8 +68,7 @@ export default {
                     store.commit('setHumidity', response.data.main.humidity+'%')
                     store.commit('setSunrise', this.convertTimeStamp(response.data.sys.sunrise))
                     store.commit('setSunset', this.convertTimeStamp(response.data.sys.sunset))
-                    store.commit('displayWeather')
-
+                    store.commit('displayWeather', true)
                 })
                 .catch(() => {
                     this.errorMessage = 'Destination introuvable. Veuillez essayer avec une orthographe différente.'
