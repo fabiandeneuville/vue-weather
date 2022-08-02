@@ -23,7 +23,7 @@ export default {
             requestLocation: '',
             api_key: process.env.VUE_APP_KEY,
             requestUrl: 'https://api.openweathermap.org/data/2.5/weather?',
-            errorMessage: ''
+            errorMessage: '',
         }
     },
     methods : {
@@ -61,6 +61,7 @@ export default {
                     const iconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
                     store.commit('setLocation', response.data.name)
                     store.commit('setCountry', response.data.sys.country)
+                    store.commit('setCountryFlagUrl', this.getCountryFlag(response.data.sys.country))
                     store.commit('setDescription', response.data.weather[0].description)
                     store.commit('setIconUrl', iconUrl)
                     store.commit('setTemperature', response.data.main.temp+'°C')
@@ -84,6 +85,9 @@ export default {
 
             this.errorMessage = '';
 
+        },
+        getCountryFlag(countryCode){
+            return `https://countryflagsapi.com/png/${countryCode}`
         }
     }
 }

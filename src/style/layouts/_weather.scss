@@ -42,6 +42,14 @@
 
     &__country {
         grid-column: 4 / 5;
+        position: relative;
+
+        &__flag {
+            height: 24.2px;
+            width: auto;
+            margin-left: 3px;
+            border: 1px solid black;
+        }
     }
 
     &__description {

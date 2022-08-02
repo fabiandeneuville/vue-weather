@@ -8,6 +8,7 @@ export default new Vuex.Store({
         'displayWeather' : false,     
         'location' : undefined,
         'country' : undefined,
+        'countryFlagUrl' : undefined,
         'description' : undefined,
         'iconUrl' : undefined,
         'temperature' : undefined,
@@ -27,6 +28,9 @@ export default new Vuex.Store({
         },
         setCountry(state, country){
             state.country = country
+        },
+        setCountryFlagUrl(state, url){
+            state.countryFlagUrl = url
         },
         setDescription(state, description){
             state.description = description

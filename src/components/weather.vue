@@ -8,6 +8,7 @@
         <div class="weather__country weather__info">
             <span class="weather__info__legend">Pays :</span>
             <p class="weather__info__text">{{ country }}</p>
+            <img class="weather__country__flag" v-bind:src="countryFlagUrl">
         </div>
         <div class="weather__description weather__info">
             <span class="weather__info__legend">Temps :</span>
@@ -50,6 +51,9 @@ export default {
         },
         country(){
             return store.state.country
+        },
+        countryFlagUrl(){
+            return store.state.countryFlagUrl
         },
         description(){
             return store.state.description
